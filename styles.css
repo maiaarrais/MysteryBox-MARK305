@@ -575,6 +575,7 @@
     }
 
     .transformation::before {
+      content: '♻️';
       position: absolute;
       font-size: 20rem;
       opacity: 0.1;
