@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reserve Your Box</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="reserve-body">
+
+  <section class="reserve-container">
+    <h1 class="reserve-title">Reserve Your Mystery Box</h1>
+    <p class="reserve-subtitle">Just tell us a few details to complete your reservation.</p>
+
+    <form id="detailsForm" class="details-form">
+
+      <label>
+        Full Name
+        <input type="text" name="name" required>
+      </label>
+
+      <label>
+        Student Email
+        <input type="email" name="email" required>
+      </label>
+
+      <label>
+        Student ID
+        <input type="text" name="studentId" required>
+      </label>
+
+      <label>
+        Box Type
+        <select name="boxType" required>
+          <option value="">Select one</option>
+          <option value="standard">Standard</option>
+          <option value="vegetarian">Vegetarian</option>
+          <option value="vegan">Vegan</option>
+          <option value="allergy">Allergy-friendly</option>
+        </select>
+      </label>
+
+      <label>
+        Pickup Time
+        <select name="pickupTime" required>
+          <option value="">Choose a time</option>
+          <option value="12-1">12:00–13:00</option>
+          <option value="1-2">13:00–14:00</option>
+          <option value="2-3">14:00–15:00</option>
+          <option value="3-4">15:00–16:00</option>
+          <option value="4-5">16:00–17:00</option>
+        </select>
+      </label>
+
+      <label>
+        Notes (Allergies, preferences…)
+        <textarea name="notes" rows="3"></textarea>
+      </label>
+
+      <button type="submit" class="btn-primary">Confirm Reservation</button>
+
+    </form>
+  </section>
+
+  <script>
+    document.getElementById("detailsForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      // later you can POST to Google Scripts or your backend
+      alert("🎉 Your reservation has been submitted!");
+      window.location.href = "index.html"; // redirect back home OR replace with "confirmation.html"
+    });
+  </script>
+
+</body>
+</html>

@@ -43,3 +43,37 @@
       el.style.transition = 'all 0.6s ease';
       observer.observe(el);
     });
+
+    document.addEventListener("DOMContentLoaded", () => {
+  const ctaForm = document.getElementById("ctaForm");
+  const detailsWrapper = document.getElementById("detailsFormWrapper");
+  const detailsForm = document.getElementById("detailsForm");
+
+  if (ctaForm && detailsWrapper) {
+    ctaForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      // (Optional) you could store the email somewhere here
+      // const email = ctaForm.querySelector('input[name="email"]').value;
+
+      // Show step 2
+      detailsWrapper.classList.remove("hidden");
+      detailsWrapper.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+
+  if (detailsForm) {
+    detailsForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      // For now just show a demo message.
+      // Later this could POST to your server / Google Forms.
+      alert("🎉 Thanks! Your box reservation has been recorded (demo).");
+
+      // Optional: reset forms
+      // ctaForm.reset();
+      // detailsForm.reset();
+      // detailsWrapper.classList.add("hidden");
+    });
+  }
+});
